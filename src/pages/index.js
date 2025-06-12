@@ -8,7 +8,7 @@ const categories = [
   { name: 'Apps', image: '/apps.jpeg', link: '/categories/apps' },
   { name: 'WebApps', image: '/webapps.jpeg', link: '/categories/webapps' },
   { name: 'Websites', image: '/websites.jpeg', link: '/categories/websites' },
-  { name: 'Robots', image: '/robots.jpeg', link: '/categories/robots' },
+  { name: 'Hardware', image: '/robots.jpeg', link: '/categories/robots' },
 ]
 
 export default function Home({ toggleDark, isDark }) {
