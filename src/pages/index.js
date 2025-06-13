@@ -1,6 +1,5 @@
-import ThemeToggle from '@/components/ThemeToggle'
+
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
 
 const categories = [
   { name: 'AI Models', image: '/ai.jpg', link: '/categories/ai' },
@@ -11,12 +10,7 @@ const categories = [
   { name: 'Hardware', image: '/robots.jpeg', link: '/categories/robots' },
 ]
 
-export default function Home({ toggleDark, isDark }) {
-  const [isClient, setIsClient] = useState(false)
-
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
+export default function Home() {
   return (
     <>
       <Head>
@@ -24,7 +18,6 @@ export default function Home({ toggleDark, isDark }) {
       </Head>
 
       <div className="hero">
-        {isClient && (
             <video
               autoPlay
               muted
@@ -43,10 +36,10 @@ export default function Home({ toggleDark, isDark }) {
               <source src="/video.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-          )}
+          
 
         <h1>FadiliTechnology</h1>
-       <ThemeToggle isDark={isDark} toggleDark={toggleDark}/>
+      
       </div>
 
       <div className="categories">

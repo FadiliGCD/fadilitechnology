@@ -4,7 +4,7 @@ import Link from 'next/link'
 const games = [
   {
     title: 'UnderCooked',
-    image: '/undercooked.jpg', 
+    image: '/undercooked.jpg',
     link: '/games/undercooked'
   }
 ]
@@ -21,39 +21,43 @@ export default function Games() {
 
         <div style={{ display: 'grid', gap: '1.5rem' }}>
           {games.map((game, index) => (
-            <Link href={game.link} key={index} passHref>
-              <div
-                style={{
-                  position: 'relative',
-                  height: '200px',
-                  borderRadius: '12px',
-                  overflow: 'hidden',
-                  cursor: 'pointer',
-                  backgroundImage: `url(${game.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                }}
-              >
-                <h2
+            <Link href={game.link} key={index}>
+              <a style={{ textDecoration: 'none' }}>
+                <div
                   style={{
-                    position: 'absolute',
-                    bottom: '1rem',
-                    left: '1rem',
-                    background: 'rgba(0,0,0,0.6)',
-                    color: 'white',
-                    padding: '0.5rem 1rem',
-                    borderRadius: '8px'
+                    position: 'relative',
+                    height: '200px',
+                    borderRadius: '12px',
+                    overflow: 'hidden',
+                    cursor: 'pointer',
+                    backgroundImage: `url(${game.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
                   }}
                 >
-                  {game.title}
-                </h2>
-              </div>
+                  <h2
+                    style={{
+                      position: 'absolute',
+                      bottom: '1rem',
+                      left: '1rem',
+                      background: 'rgba(0,0,0,0.6)',
+                      color: 'white',
+                      padding: '0.5rem 1rem',
+                      borderRadius: '8px'
+                    }}
+                  >
+                    {game.title}
+                  </h2>
+                </div>
+              </a>
             </Link>
           ))}
         </div>
 
-        <Link href="/" style={{ color: '#0070f3', display: 'inline-block', marginTop: '2rem' }}>
-          ← Back to Home
+        <Link href="/">
+          <a style={{ color: '#0070f3', display: 'inline-block', marginTop: '2rem' }}>
+            ← Back to Home
+          </a>
         </Link>
       </div>
     </>
